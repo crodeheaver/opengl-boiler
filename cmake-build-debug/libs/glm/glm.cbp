@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="glm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\libs\;CMake Files\libs\assimp\;CMake Files\libs\assimp\cmake\;CMake Files\libs\assimp\include\;CMake Files\libs\assimp\include\assimp\;CMake Files\libs\assimp\cmake-modules\;CMake Files\libs\assimp\contrib\;CMake Files\libs\assimp\contrib\zlib\;CMake Files\libs\assimp\contrib\irrXML\;CMake Files\libs\assimp\code\;CMake Files\libs\assimp\tools\;CMake Files\libs\assimp\tools\assimp_cmd\;CMake Files\libs\assimp\test\;CMake Files\libs\assimp\test\headercheck\;CMake Files\libs\glfw\;CMake Files\libs\glfw\src\;CMake Files\libs\glfw\CMake\;CMake Files\libs\glad\;CMake Files\libs\glm\;CMake Files\libs\glm\glm\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/workspace/opengl-boiler/cmake-build-debug/libs/glm"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/workspace/opengl-boiler/cmake-build-debug/libs/glm/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/workspace/opengl-boiler/cmake-build-debug/libs/glm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/workspace/opengl-boiler/cmake-build-debug/libs/glm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/workspace/opengl-boiler/cmake-build-debug/libs/glm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/workspace/opengl-boiler/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/assimp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/assimp-config.cmake.in">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/assimp.pc.in">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/assimpTargets-debug.cmake.in">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/assimpTargets.cmake.in">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/revision.h.in">
+			<Option virtualFolder="CMake Files\libs\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/cmake/HunterGate.cmake">
+			<Option virtualFolder="CMake Files\libs\assimp\cmake\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/include/assimp/config.h.in">
+			<Option virtualFolder="CMake Files\libs\assimp\include\assimp\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/cmake-modules/FindDirectX.cmake">
+			<Option virtualFolder="CMake Files\libs\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/cmake-modules/FindPkgMacros.cmake">
+			<Option virtualFolder="CMake Files\libs\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/cmake-modules/FindRT.cmake">
+			<Option virtualFolder="CMake Files\libs\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/cmake-modules/FindZLIB.cmake">
+			<Option virtualFolder="CMake Files\libs\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/cmake-modules/PrecompiledHeader.cmake">
+			<Option virtualFolder="CMake Files\libs\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/contrib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\contrib\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/contrib/zlib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/contrib/zlib/zconf.h.cmakein">
+			<Option virtualFolder="CMake Files\libs\assimp\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/contrib/zlib/zlib.pc.cmakein">
+			<Option virtualFolder="CMake Files\libs\assimp\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/contrib/irrXML/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\contrib\irrXML\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\code\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/tools/assimp_cmd/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\tools\assimp_cmd\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\test\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/assimp/test/headercheck/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\assimp\test\headercheck\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\glfw\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\libs\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\libs\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\libs\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glfw/CMake/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\libs\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\glad\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\glm\"/>
+		</Unit>
+		<Unit filename="C:/workspace/opengl-boiler/libs/glm/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\glm\glm\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

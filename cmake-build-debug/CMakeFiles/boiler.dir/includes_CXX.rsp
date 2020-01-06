@@ -1,0 +1,1 @@
+-IC:/workspace/opengl-boiler/libs/assimp/code/../include -IC:/workspace/opengl-boiler/cmake-build-debug/libs/assimp/code/../include -IC:/workspace/opengl-boiler/libs/glm/glm/.. -IC:/workspace/opengl-boiler/libs/glad/include -IC:/workspace/opengl-boiler/libs/glfw/include 

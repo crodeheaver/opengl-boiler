@@ -1,0 +1,1 @@
+libs/assimp/code/libassimpd.a libs/glad/libgladd.a libs/glfw/src/libglfw3d.a -lopengl32 libs/assimp/contrib/zlib/libzlibstaticd.a libs/assimp/contrib/irrXML/libIrrXMLd.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

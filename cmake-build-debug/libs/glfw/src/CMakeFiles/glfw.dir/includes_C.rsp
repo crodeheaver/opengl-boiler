@@ -1,0 +1,1 @@
+-IC:/workspace/opengl-boiler/libs/glfw/include -IC:/workspace/opengl-boiler/libs/glfw/src -IC:/workspace/opengl-boiler/cmake-build-debug/libs/glfw/src 
