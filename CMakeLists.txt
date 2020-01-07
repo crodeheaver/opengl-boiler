@@ -16,7 +16,7 @@ add_subdirectory(libs/glad)
 add_subdirectory(libs/glm)
 add_subdirectory(libs/assimp)
 
-add_executable(boiler src/main.cpp src/ShaderProgram.h src/ShaderProgram.cpp libs/stb/stb_image.h src/TextureLoader.h src/WindowManager.h)
+add_executable(boiler src/main.cpp src/ShaderProgram.h src/ShaderProgram.cpp libs/stb/stb_image.h src/TextureLoader.h src/WindowManager.h src/Maths.h)
 
 target_compile_definitions(boiler PUBLIC GLFW_INCLUDE_NONE )
 

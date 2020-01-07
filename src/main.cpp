@@ -1,11 +1,15 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
 #include <vector>
 #include "ShaderProgram.h"
 #include "TextureLoader.h"
 #include "WindowManager.h"
+#include "Maths.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -57,6 +61,7 @@ int main()
 
     TextureLoader texture("texture");
 
+    float rotation = 0;
 
     while (!glfwWindowShouldClose(window))
     {
@@ -71,6 +76,14 @@ int main()
 
         // render container
         program.start();
+
+        auto translation = glm::vec3(0.0f, 0.0f, 0.0f);
+
+        auto trans = Maths::createTransformationMatrix(translation, rotation,rotation,0,1);
+
+        unsigned int transformLoc = program.getUniformLocation("transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
@@ -78,6 +91,7 @@ int main()
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
+        rotation += .2;
     }
 
     glDeleteVertexArrays(1, &VAO);
