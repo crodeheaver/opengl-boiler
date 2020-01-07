@@ -10,6 +10,7 @@
 #include "TextureLoader.h"
 #include "WindowManager.h"
 #include "Maths.h"
+#include "Renderer.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -97,13 +98,11 @@ int main()
 
     float rotation = 0;
 
+    glm::mat4 view          = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+    glm::mat4 projection    = glm::mat4(1.0f);
+    projection = glm::perspective(glm::radians(45.0f), (float)1200.0f / (float)720.0f, 0.1f, 100.0f);
+    view       = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
-    glm::mat4 view = glm::mat4(1.0f);
-// note that we're translating the scene in the reverse direction of where we want to move
-    view = glm::translate(view, glm::vec3(0.0f, 0.0f, 0.0f));
-
-    glm::mat4 projection;
-    projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -124,15 +123,17 @@ int main()
 
         auto trans = Maths::createTransformationMatrix(translation, rotation,rotation,0,.5);
 
+
+
         unsigned int transformLoc = program.getUniformLocation("model");
         unsigned int viewLoc = program.getUniformLocation("view");
-        unsigned int perspectiveLoc = program.getUniformLocation("perspective");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-        glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, glm::value_ptr(projection));
+        unsigned int perspectiveLoc = program.getUniformLocation("projection");
+        GLCall(glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans)));
+        GLCall(glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view)));
+        GLCall(glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, glm::value_ptr(projection)));
 
-        glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+        GLCall(glBindVertexArray(VAO));
+        GLCall(glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0));
 
         // These are the steps needed to create a new square
         translation = glm::vec3(0.25f, 0.0f, 0.0f);
