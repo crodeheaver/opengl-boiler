@@ -97,6 +97,14 @@ int main()
 
     float rotation = 0;
 
+
+    glm::mat4 view = glm::mat4(1.0f);
+// note that we're translating the scene in the reverse direction of where we want to move
+    view = glm::translate(view, glm::vec3(0.0f, 0.0f, 0.0f));
+
+    glm::mat4 projection;
+    projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+
     while (!glfwWindowShouldClose(window))
     {
         // input
@@ -116,8 +124,12 @@ int main()
 
         auto trans = Maths::createTransformationMatrix(translation, rotation,rotation,0,.5);
 
-        unsigned int transformLoc = program.getUniformLocation("transform");
+        unsigned int transformLoc = program.getUniformLocation("model");
+        unsigned int viewLoc = program.getUniformLocation("view");
+        unsigned int perspectiveLoc = program.getUniformLocation("perspective");
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
@@ -126,6 +138,8 @@ int main()
         translation = glm::vec3(0.25f, 0.0f, 0.0f);
         trans = Maths::createTransformationMatrix(translation, rotation,rotation,0,.5);
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
