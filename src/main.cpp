@@ -11,22 +11,21 @@
 #include "WindowManager.h"
 #include "Maths.h"
 #include "Renderer.h"
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
-
-// settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+#include "Camera.h"
 
 int main()
 {
-    WindowManager::init("Boiler");
+    std::shared_ptr<Camera> camera = std::make_shared<Camera>(Camera(glm::vec3(0.0f, 0.0f, 3.0f)));
+
+    WindowManager::init("Boiler", camera);
+
+    WindowManager::setDeltaTime(0.0f);
+    WindowManager::setLastX( 1200.0f / 2.0f);
+    WindowManager::setLastY(720.0f / 2.0f);
 
     auto window = WindowManager::getWindow();
 
     ShaderProgram program("shader");
-
 
 
     float vertices[] = {
@@ -101,14 +100,18 @@ int main()
     glm::mat4 view          = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
     glm::mat4 projection    = glm::mat4(1.0f);
     projection = glm::perspective(glm::radians(45.0f), (float)1200.0f / (float)720.0f, 0.1f, 100.0f);
-    view       = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
 
+    double lastFrame = 0.0f;
     while (!glfwWindowShouldClose(window))
     {
         // input
         // -----
-        processInput(window);
+        float currentFrame = glfwGetTime();
+        WindowManager::setDeltaTime(currentFrame - lastFrame);
+        lastFrame = currentFrame;
+
+        WindowManager::ProcessInput(window);
 
         // render
         // ------
@@ -123,7 +126,7 @@ int main()
 
         auto trans = Maths::createTransformationMatrix(translation, rotation,rotation,0,.5);
 
-
+        view       = camera->GetViewMatrix();
 
         unsigned int transformLoc = program.getUniformLocation("model");
         unsigned int viewLoc = program.getUniformLocation("view");
